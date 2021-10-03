@@ -52,8 +52,8 @@
 
                     <div class="form-group mb-3">
                         <select name="type" id="type">
-                            <option value="<? set_value('Admin') ?>">Admin</option>
-                            <option value="<? set_value('Karyawan') ?>">Karyawan</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Karyawan ?>">Karyawan</option>
                         </select>
                     </div>
 
