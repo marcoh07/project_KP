@@ -36,6 +36,9 @@ $routes->get('/signup', 'SignupController::index');
 $routes->get('/signin', 'SigninController::index');
 $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 $routes->get('/home', 'Pages::index');
+$routes->get('/karyawan', 'KaryawanController::index');
+$routes->get('/kategori', 'CategoryController::index');
+$routes->get('/produk', 'productController::index');
 
 /*
  * --------------------------------------------------------------------

@@ -29,9 +29,7 @@ class SignupController extends Controller
           
         if($this->validate($rules)){
             $userModel = new UserModel();
-            $db      = \Config\Database::connect();
-            $builder = $db->table('users');
-            $query=$builder->countAll();
+            $query=$userModel->countRow()+1;
             if ($query<10)
                 $id_user="U000".$query;
             else if (($query>=10) && ($query<100))
@@ -51,9 +49,9 @@ class SignupController extends Controller
                 'type_user'         => $this->request->getVar('type')
             ];
 
-            $userModel->save($data);
+            $userModel->insert($data);
 
-            return redirect()->to('/signin');
+            return redirect()->to('/karyawan');
         }else{
             $data['validation'] = $this->validator;
             echo view('signup', $data);

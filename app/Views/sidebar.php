@@ -37,11 +37,11 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="dropdownMaster">Master</div>
     <div class="contentMaster">
-        <a href="#">Karyawan</a>
+        <a href="/karyawan">Karyawan</a>
         <a href="#">Supplier</a>
         <a href="#">Konsumen</a>
-        <a href="#">Kategori</a>
-        <a href="#">Produk</a>
+        <a href="/kategori">Kategori</a>
+        <a href="/produk">Produk</a>
     </div>
     <div class="dropdownTransaksi">Transaksi</div>
     <div class="contentTransaksi">
