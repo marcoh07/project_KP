@@ -11,9 +11,10 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $data['title'] = ucfirst('home');
-        echo view('sidebar', $data);
-        echo view('produk', $data);
+        $productModel = new ProductModel();
+        $data=$productModel->findAll();
+        echo view('sidebar');
+        echo view('produk', array('data' => $data));
     }
 
     public function insertProduct()

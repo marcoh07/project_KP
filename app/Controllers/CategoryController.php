@@ -10,9 +10,10 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $data['title'] = ucfirst('home');
-        echo view('sidebar', $data);
-        echo view('kategori', $data);
+        $categoryModel = new CategoryModel();
+        $data=$categoryModel->findAll();
+        echo view('sidebar');
+        echo view('kategori',array('data' => $data));
     }
 
     public function insertCategory()
