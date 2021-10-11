@@ -30,7 +30,7 @@
                             <textarea name="desc" id="desc" placeholder="description" cols="30" rows="10" value="<?= set_value('desc') ?>"></textarea>    
                         </div>
 
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-dark">Submit</button>
                         </div>
                     </form>

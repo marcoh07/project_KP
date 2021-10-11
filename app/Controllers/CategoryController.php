@@ -13,14 +13,14 @@ class CategoryController extends Controller
         $categoryModel = new CategoryModel();
         $data=$categoryModel->findAll();
         echo view('sidebar');
-        echo view('kategori',array('data' => $data));
+        echo view('master/kategori',array('data' => $data));
     }
 
     public function insertCategory()
     {
         helper(['form']);
         $data = [];
-        echo view('insertCategory', $data);
+        echo view('master/insertCategory', $data);
     }
 
     public function store()

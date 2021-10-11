@@ -14,7 +14,7 @@ class ProductController extends Controller
         $productModel = new ProductModel();
         $data=$productModel->findAll();
         echo view('sidebar');
-        echo view('produk', array('data' => $data));
+        echo view('master/produk', array('data' => $data));
     }
 
     public function insertProduct()
@@ -22,7 +22,7 @@ class ProductController extends Controller
         helper(['form']);
         $categoryModel=new CategoryModel();
         $data = $categoryModel->findAll();
-        return view('insertProduct', array('data' => $data));
+        return view('master/insertProduct', array('data' => $data));
     }
 
     public function store()

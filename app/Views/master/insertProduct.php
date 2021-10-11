@@ -45,7 +45,7 @@
                             <input type="text" name="price" placeholder="price" value="<?= set_value('price') ?>" class="form-control" >
                         </div>
 
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-dark">Submit</button>
                         </div>
                     </form>

@@ -38,23 +38,23 @@
     <div class="dropdownMaster">Master</div>
     <div class="contentMaster">
         <a href="/karyawan">Karyawan</a>
-        <a href="#">Supplier</a>
-        <a href="#">Konsumen</a>
+        <a href="/supplier">Supplier</a>
+        <a href="/konsumen">Konsumen</a>
         <a href="/kategori">Kategori</a>
         <a href="/produk">Produk</a>
     </div>
     <div class="dropdownTransaksi">Transaksi</div>
     <div class="contentTransaksi">
-        <a href="#">Pembelian</a>
-        <a href="#">Penjualan</a>
+        <a href="/purchase">Pembelian</a>
+        <a href="/sale">Penjualan</a>
     </div>
     <div class="dropdownLaporan">Laporan</div>
     <div class="contentLaporan">
-        <a href="#">Mutasi Penjualan & Pembelian</a>
-        <a href="#">Pembelian Per Supplier</a>
-        <a href="#">Penjualan Per Customer</a>
-        <a href="#">Barang Pembelian Terbanyak</a>
-        <a href="#">Barang Penjualan Terbanyak</a>
+        <a href="/laporanMutasi">Mutasi Penjualan & Pembelian</a>
+        <a href="/laporanPembelian">Pembelian Per Supplier</a>
+        <a href="/laporanPenjualan">Penjualan Per Customer</a>
+        <a href="/laporanPembelianTerbanyak">Barang Pembelian Terbanyak</a>
+        <a href="/laporanPenjualanTerbanyak">Barang Penjualan Terbanyak</a>
     </div>
 </div>
 <span class="btn fa-stack fa-lg" onclick="openNav()">

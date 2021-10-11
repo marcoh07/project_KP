@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <title>Login</title>
   </head>
   <body>
@@ -12,7 +11,7 @@
         <div class="row justify-content-md-center">
             <div class="col-5">
                 
-                <h2>Login in</h2>
+                <h2>Log in</h2>
                 
                 <?php if(session()->getFlashdata('msg')):?>
                     <div class="alert alert-warning">

@@ -58,7 +58,7 @@
                         </div>
 
 
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-dark">Signup</button>
                         </div>
                         

@@ -13,14 +13,14 @@ class KaryawanController extends Controller
         $userModel = new UserModel();
         $data=$userModel->findAll();
         echo view('sidebar');
-        echo view('karyawan',array('data' => $data));
+        echo view('master/karyawan',array('data' => $data));
     }
 
     public function formKaryawan()
     {
         $data['title'] = ucfirst('home');
         echo view('sidebar', $data);
-        echo view('signup', $data);
+        echo view('master/signup', $data);
     }
 
 }

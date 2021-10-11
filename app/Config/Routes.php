@@ -37,8 +37,19 @@ $routes->get('/signin', 'SigninController::index');
 $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 $routes->get('/home', 'Pages::index');
 $routes->get('/karyawan', 'KaryawanController::index');
+$routes->get('/supplier', 'SupplierController::index');
+$routes->get('/konsumen', 'KonsumenController::index');
 $routes->get('/kategori', 'CategoryController::index');
 $routes->get('/produk', 'productController::index');
+
+$routes->get('/purchase', 'PurchaseController::index');
+$routes->get('/sale', 'SaleController::index');
+
+$routes->get('/laporanMutasi', 'LaporanController::mutasi');
+$routes->get('/laporanPembelian', 'LaporanController::pembelian');
+$routes->get('/laporanPenjualan', 'LaporanController::penjualan');
+$routes->get('/laporanPembelianTerbanyak', 'LaporanController::pembelianTerbanyak');
+$routes->get('/laporanPenjualanTerbanyak', 'LaporanController::penjualanTerbanyak');
 
 /*
  * --------------------------------------------------------------------
