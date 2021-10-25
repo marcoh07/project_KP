@@ -33,15 +33,27 @@
                 </div>
             </div>
         </form>
-        <table id="dataMutasi" border="1px" class="table table-bordered table-striped">
+        <table id="dataMutasi" border="1px" class="table table-bordered">
+            <thead class="thead-light text-center">
+                <tr>
+                    <th rowspan="2">NO</th>
+                    <th rowspan="2">ID Produk</th>
+                    <th rowspan="2">ID Transaksi</th>
+                    <th rowspan="2">Nama Barang</th>
+                    <th rowspan="2">Keterangan</th>
+                    <th colspan="2">Mutasi</th>
+                </tr>
+                <tr>
+                    <th>Pembelian</th>
+                    <th>Penjualan</th>
+                </tr>
+            </thead>
             <tr>
-                <th>NO</th>
-                <th>ID Produk</th>
-                <th>ID Transaksi</th>
-                <th>Nama Barang</th>
-                <th>Keterangan</th>
-                <th colspan="2">Mutasi</th>
-                <th  colspan=3>Action</th>
+                <td>1</td>
+                <td>ID</td>
+                <td>ID</td>
+                <td>Nama</td>
+                <td>Keterangan</td>
             </tr>
         </table>
     </div>

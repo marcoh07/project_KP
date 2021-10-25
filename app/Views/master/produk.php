@@ -27,6 +27,7 @@
         <tr>
             <th>ID</th>
             <th>Nama</th>
+            <th>Quantity</th>
             <th colspan=3>Action</th>
         </tr>
         <?php
@@ -37,6 +38,7 @@
                     echo "<tr>";
                         echo "<td>$value[id_product]</td>";    
                         echo "<td>$value[name_product]</td>";    
+                        echo "<td>$value[quantity_product]</td>";
                         echo "<td><button>Lihat</button></td>";    
                         echo "<td><button>Edit</button></td>";    
                         echo "<td><button>Delete</button></td>";    
