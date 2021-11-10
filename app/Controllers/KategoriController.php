@@ -6,21 +6,21 @@ use CodeIgniter\Controller;
 
 use App\Models\CategoryModel;
 
-class CategoryController extends Controller
+class KategoriController extends Controller
 {
     public function index()
     {
         $categoryModel = new CategoryModel();
         $data=$categoryModel->findAll();
         echo view('sidebar');
-        echo view('master/kategori',array('data' => $data));
+        echo view('master/Kategori/kategori',array('data' => $data));
     }
 
-    public function insertCategory()
+    public function insertKategori()
     {
         helper(['form']);
         $data = [];
-        echo view('master/insertCategory', $data);
+        echo view('master/Kategori/insertKategori', $data);
     }
 
     public function store()

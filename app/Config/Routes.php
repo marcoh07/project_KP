@@ -39,8 +39,8 @@ $routes->get('/home', 'Pages::index');
 $routes->get('/karyawan', 'KaryawanController::index');
 $routes->get('/supplier', 'SupplierController::index');
 $routes->get('/konsumen', 'KonsumenController::index');
-$routes->get('/kategori', 'CategoryController::index');
-$routes->get('/produk', 'productController::index');
+$routes->get('/kategori', 'KategoriController::index');
+$routes->get('/produk', 'produkController::index');
 
 $routes->get('/purchase', 'PurchaseController::index');
 $routes->get('/sale', 'SaleController::index');

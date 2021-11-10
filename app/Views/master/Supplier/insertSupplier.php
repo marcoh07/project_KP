@@ -36,7 +36,7 @@
                     
                 </form>
                 <div class="d-grid">
-                    <button class="btn btn-danger" onclick="location.href='<?php echo base_url();?>/KonsumenController/index'">Cancel</button>
+                    <button class="btn btn-danger" onclick="location.href='<?php echo base_url();?>/SupplierController/index'">Cancel</button>
                 </div>
             </div>
         </div>

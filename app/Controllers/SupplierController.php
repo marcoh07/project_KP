@@ -14,14 +14,14 @@ class SupplierController extends Controller
         $productModel = new ProductModel();
         $data=$productModel->findAll();
         echo view('sidebar');
-        echo view('master/supplier', array('data' => $data));
+        echo view('master/Supplier/supplier', array('data' => $data));
     }
 
     public function insertSupplier()
     {
         helper(['form']);
         $data = [];
-        echo view('master/insertSupplier', $data);
+        echo view('master/Supplier/insertSupplier', $data);
     }
 
     //public function insertProduct()

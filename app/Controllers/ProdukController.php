@@ -7,22 +7,22 @@ use CodeIgniter\Controller;
 use App\Models\ProductModel;
 use App\Models\CategoryModel;
 
-class ProductController extends Controller
+class ProdukController extends Controller
 {
     public function index()
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
         echo view('sidebar');
-        echo view('master/produk', array('data' => $data));
+        echo view('master/Produk/produk', array('data' => $data));
     }
 
-    public function insertProduct()
+    public function insertProduk()
     {
         helper(['form']);
         $categoryModel=new CategoryModel();
         $data = $categoryModel->findAll();
-        return view('master/insertProduct', array('data' => $data));
+        return view('master/Produk/insertProduk', array('data' => $data));
     }
 
     public function store()

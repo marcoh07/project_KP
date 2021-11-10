@@ -10,7 +10,7 @@ class SignupController extends Controller
     {
         helper(['form']);
         $data = [];
-        echo view('master/insertKaryawan', $data);
+        echo view('master/Karyawan/insertKaryawan', $data);
     }
   
     public function store()
@@ -54,7 +54,7 @@ class SignupController extends Controller
             return redirect()->to('/karyawan');
         }else{
             $data['validation'] = $this->validator;
-            echo view('signup', $data);
+            echo view('master/Karyawan/insertKaryawan', $data);
         }
           
     }

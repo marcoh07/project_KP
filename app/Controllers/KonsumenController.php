@@ -14,14 +14,14 @@ class KonsumenController extends Controller
         $productModel = new ProductModel();
         $data=$productModel->findAll();
         echo view('sidebar');
-        echo view('master/konsumen', array('data' => $data));
+        echo view('master/Konsumen/konsumen', array('data' => $data));
     }
 
     public function insertKonsumen()
     {
         helper(['form']);
         $data = [];
-        echo view('master/insertKonsumen', $data);
+        echo view('master/Konsumen/insertKonsumen', $data);
     }
 
     //public function insertProduct()
