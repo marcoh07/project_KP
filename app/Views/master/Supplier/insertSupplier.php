@@ -4,42 +4,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Insert Supplier</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <title>Supplier</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-md-center">
-            <div class="col-5">
-                <h2>Supplier</h2>
-                <form action="" method="post">
-                    <div class="form-group mb-3">
-                        <input type="text" name="name" placeholder="Name" class="form-control" >
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <input type="text" name="email" placeholder="E-Mail" class="form-control" >
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <input type="text" name="phone_number" placeholder="Phone Number" class="form-control" >
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <input type="text" name="address" placeholder="Address" class="form-control" >
-                    </div>
-
-
-                    <div class="d-grid mb-3">
-                        <button type="submit" class="btn btn-dark">Submit</button>
-                    </div>
-                    
-                </form>
-                <div class="d-grid">
-                    <button class="btn btn-danger" onclick="location.href='<?php echo base_url();?>/SupplierController/index'">Cancel</button>
-                </div>
-            </div>
+<div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item">Supplier</li>
+              <li class="breadcrumb-item active">Add New</li>
+            </ol>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+    <section class="content" style="overflow-y: scroll;">
+      <div class="container-fluid">
+        <div class="row">
+            <?php if(isset($validation)):?>
+                <div class="alert alert-warning">
+                    <?= $validation->listErrors() ?>
+                </div>
+            <?php endif;?>
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add New</h3>
+              </div>
+              <form action="<?php echo base_url(); ?>/SupplierController/insert" method="post">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label>E-Mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail">
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                  </div>
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number">
+                  </div>
+                </div>
+                <div class="card-footer">
+                    <a href="<?php echo base_url();?>/SupplierController/index" class="btn btn-danger">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+        </div>
+    </section>
+</div>
 </body>
 </html>

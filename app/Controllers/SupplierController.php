@@ -13,6 +13,7 @@ class SupplierController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('master/Supplier/supplier', array('data' => $data));
     }
@@ -21,6 +22,8 @@ class SupplierController extends Controller
     {
         helper(['form']);
         $data = [];
+        echo view('header');
+        echo view('sidebar');
         echo view('master/Supplier/insertSupplier', $data);
     }
 

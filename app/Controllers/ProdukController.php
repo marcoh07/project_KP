@@ -13,8 +13,30 @@ class ProdukController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('master/Produk/produk', array('data' => $data));
+    }
+
+    public function search()
+    {
+        $userModel = new ProductModel();
+        $search=$this->request->getVar('search');
+        $data=$userModel->where('name_product', $search)->findAll();;
+        echo view('header');
+        echo view('sidebar');
+        echo view('master/Produk/produk',array('data' => $data));
+    }
+
+    public function lihatProduk()
+    {
+        helper(['form']);
+        $produkModel = new ProductModel();
+        $id_produk=$this->request->getVar('id');
+        $data = $produkModel->find($id_produk);
+        echo view('header');
+        echo view('sidebar');
+        echo view('master/Produk/lihatProduk', $data);
     }
 
     public function insertProduk()
@@ -22,10 +44,12 @@ class ProdukController extends Controller
         helper(['form']);
         $categoryModel=new CategoryModel();
         $data = $categoryModel->findAll();
+        echo view('header');
+        echo view('sidebar');
         return view('master/Produk/insertProduk', array('data' => $data));
     }
 
-    public function store()
+    public function insert()
     {
         helper(['form']);
         $rules = [
@@ -53,8 +77,61 @@ class ProdukController extends Controller
             return redirect()->to('/produk');
         }else{
             $data['validation'] = $this->validator;
-            echo view('insertProduct', $data);
+            echo view('insertProduk', $data);
         }
+    }
+
+    public function updateProduk()
+    {
+        helper(['form']);
+        $categoryModel=new CategoryModel();
+        $ProdukModel = new ProductModel();
+        $id_Produk=$this->request->getVar('id');
+        $data = $ProdukModel->find($id_Produk);
+        $data['category'] = $categoryModel->findAll();
+        echo view('header');
+        echo view('sidebar');
+        echo view('master/Produk/updateProduk', $data);
+    }
+
+    public function update()
+    {
+        helper(['form']);
+        $rules = [
+            'name'             => 'required|min_length[2]|max_length[50]'
+        ];
+          
+        $ProdukModel = new ProductModel();
+        $id_Produk=$this->request->getVar('id');
+        if($this->validate($rules)){
+            $data = [
+                'name_product'     => $this->request->getVar('name'),
+                'quantity_product' => $this->request->getVar('quantity'),
+                'type_product'     => $this->request->getVar('type'),
+                'price_product'    => $this->request->getVar('price')
+            ];
+
+            $ProdukModel->update($id_Produk,$data);
+
+            return redirect()->to('produk');
+        }else{
+            $data = $ProdukModel->find($id_Produk);
+            $data['validation'] = $this->validator;
+            echo view('header');
+            echo view('sidebar');
+            echo view('master/Produk/updateProduk', $data);
+        }
+    }
+
+    public function deleteProduk()
+    {
+        $ProdukModel = new ProductModel();
+        $id_Produk=$this->request->getVar('id');
+        $ProdukModel->delete($id_Produk);
+        $data=$ProdukModel->findAll();
+        echo view('header');
+        echo view('sidebar');
+        echo view('master/Produk/produk',array('data' => $data));
     }
 
 }

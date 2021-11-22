@@ -13,6 +13,17 @@ class KaryawanController extends Controller
     {
         $userModel = new UserModel();
         $data=$userModel->findAll();
+        echo view('header');
+        echo view('sidebar');
+        echo view('master/Karyawan/karyawan',array('data' => $data));
+    }
+
+    public function search()
+    {
+        $userModel = new UserModel();
+        $search=$this->request->getVar('search');
+        $data=$userModel->where('name_user', $search)->findAll();;
+        echo view('header');
         echo view('sidebar');
         echo view('master/Karyawan/karyawan',array('data' => $data));
     }
@@ -23,6 +34,8 @@ class KaryawanController extends Controller
         $userModel = new UserModel();
         $id_user=$this->request->getVar('id');
         $data = $userModel->find($id_user);
+        echo view('header');
+        echo view('sidebar');
         echo view('master/Karyawan/lihatKaryawan', $data);
     }
 
@@ -30,6 +43,8 @@ class KaryawanController extends Controller
     {
         helper(['form']);
         $data = [];
+        echo view('header');
+        echo view('sidebar');
         echo view('master/Karyawan/insertKaryawan', $data);
     }
 
@@ -74,6 +89,8 @@ class KaryawanController extends Controller
             return redirect()->to('/karyawan');
         }else{
             $data['validation'] = $this->validator;
+            echo view('header');
+            echo view('sidebar');
             echo view('master/Karyawan/insertKaryawan', $data);
         }
     }
@@ -84,6 +101,8 @@ class KaryawanController extends Controller
         $userModel = new UserModel();
         $id_user=$this->request->getVar('id');
         $data = $userModel->find($id_user);
+        echo view('header');
+        echo view('sidebar');
         echo view('master/Karyawan/updateKaryawan', $data);
     }
 
@@ -93,22 +112,19 @@ class KaryawanController extends Controller
         $rules = [
             'username'         => 'required|min_length[2]|max_length[50]',
             'name'             => 'required|min_length[2]|max_length[50]',
-            'email'            => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email_user]',
-            'password'         => 'required|min_length[4]|max_length[50]',
-            'confirmpassword'  => 'matches[password]',
+            'email'            => 'required|min_length[4]|max_length[100]|valid_email',
             'phone_number'     => 'required',
             'address'          => 'required',
             'type'             => 'required',
         ];
           
+        $userModel = new UserModel();
+        $id_user=$this->request->getVar('id');
         if($this->validate($rules)){
-            $userModel = new UserModel();
-            $id_user=$this->request->getVar('id');
             $data = [
                 'username_user'     => $this->request->getVar('username'),
                 'name_user'         => $this->request->getVar('name'),
                 'email_user'        => $this->request->getVar('email'),
-                'password_user'     => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                 'phone_number_user' => $this->request->getVar('phone_number'),
                 'address_user'      => $this->request->getVar('address'),
                 'type_user'         => $this->request->getVar('type')
@@ -118,7 +134,9 @@ class KaryawanController extends Controller
 
             return redirect()->to('/karyawan');
         }else{
+            $data = $userModel->find($id_user);
             $data['validation'] = $this->validator;
+            echo view('sidebar');
             echo view('master/Karyawan/updateKaryawan', $data);
         }
     }

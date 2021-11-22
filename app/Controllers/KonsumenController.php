@@ -13,6 +13,7 @@ class KonsumenController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('master/Konsumen/konsumen', array('data' => $data));
     }
@@ -21,6 +22,8 @@ class KonsumenController extends Controller
     {
         helper(['form']);
         $data = [];
+        echo view('header');
+        echo view('sidebar');
         echo view('master/Konsumen/insertKonsumen', $data);
     }
 

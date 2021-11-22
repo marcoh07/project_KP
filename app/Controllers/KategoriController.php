@@ -12,6 +12,7 @@ class KategoriController extends Controller
     {
         $categoryModel = new CategoryModel();
         $data=$categoryModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('master/Kategori/kategori',array('data' => $data));
     }
@@ -20,6 +21,8 @@ class KategoriController extends Controller
     {
         helper(['form']);
         $data = [];
+        echo view('header');
+        echo view('sidebar');
         echo view('master/Kategori/insertKategori', $data);
     }
 
