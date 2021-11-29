@@ -13,15 +13,18 @@ class SaleController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
-        echo view('transaksi/sale', array('data' => $data));
+        echo view('transaksi/sale/sale', array('data' => $data));
     }
 
     public function insertSale()
     {
         helper(['form']);
         $data = [];
-        echo view('transaksi/insertSale', $data);
+        echo view('header');
+        echo view('sidebar');
+        echo view('transaksi/sale/insertSale', $data);
     }
 
     //public function insertProduct()

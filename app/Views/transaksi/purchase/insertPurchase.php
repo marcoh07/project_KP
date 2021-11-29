@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sale</title>
+    <title>Purchase</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
 </head>
 <body>
 <div class="container">
-    <h2>Sale</h2>
+    <h2>Purchase</h2>
     <div class="row">      
         <div class="col-lg-6 col-sm-12 mb-3">
             <div class="form-group">
@@ -75,7 +77,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-12">
-                        <label class="text-primary">Customer</label>
+                        <label class="text-primary">Supplier</label>
                     </div>
                     <div class="col-sm-12">
                         <select name="" id="" class="form-control"></select>
@@ -108,7 +110,7 @@
             </tr>
         </table>
     </div>
-    <button class="btn btn-alt-primary mx-3 mb-10 mt-10" onclick="location.href='<?php echo base_url();?>/SaleController/index'">Back</button>
+    <button class="btn btn-alt-primary mx-3 mb-10 mt-10" onclick="location.href='<?php echo base_url();?>/PurchaseController/index'">Back</button>
     <button class="btn btn-success mb-10 mt-10">Pay</button>
 </div>
 </body>

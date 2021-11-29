@@ -13,15 +13,18 @@ class PurchaseController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
-        echo view('transaksi/purchase', array('data' => $data));
+        echo view('transaksi/purchase/purchase', array('data' => $data));
     }
 
     public function insertPurchase()
     {
         helper(['form']);
         $data = [];
-        echo view('transaksi/insertPurchase', $data);
+        echo view('header');
+        echo view('sidebar');
+        echo view('transaksi/purchase/insertPurchase', $data);
     }
 
     //public function insertProduct()

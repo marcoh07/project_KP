@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase</title>
+    <title>Sale</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
 </head>
 <body>
     <div class="container">
-        <h2>Purchase</h2>
+        <h2>Sale</h2>
+        <div class="row ">
+            <button>print</button>
+        </div>
         <div class="row">
             <div class="col-lg-6 col-sm-12">
                 <div class="form-group">
@@ -85,7 +90,7 @@
             </div>        
         </div>
         <div class="row">
-            <table id="dataPurchase" border="1px" class="table table-bordered table-striped">
+            <table id="dataSale" border="1px" class="table table-bordered table-striped">
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
@@ -128,7 +133,6 @@
                 <input class=" form-control " type="text" maxlength="50" id="short_notes" name="short_notes" placeholder="Short Notes" value="">
             </div>
         </div>
-        <input type="hidden" id="document_date" name="document_date" value="29-09-2021">
     </div>
     <button class="btn btn-alt-primary mb-10 mt-10">Back</button>
     <button class="btn btn-success mb-10 mt-10">Pay</button>

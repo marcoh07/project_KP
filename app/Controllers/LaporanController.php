@@ -13,6 +13,7 @@ class LaporanController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('laporan/mutasi', array('data' => $data));
     }
@@ -21,6 +22,7 @@ class LaporanController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('laporan/pembelianSupplier', array('data' => $data));
     }
@@ -29,6 +31,7 @@ class LaporanController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('laporan/penjualanCustomer', array('data' => $data));
     }
@@ -37,6 +40,7 @@ class LaporanController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('laporan/pembelianTerbanyak', array('data' => $data));
     }
@@ -45,6 +49,7 @@ class LaporanController extends Controller
     {
         $productModel = new ProductModel();
         $data=$productModel->findAll();
+        echo view('header');
         echo view('sidebar');
         echo view('laporan/penjualanTerbanyak', array('data' => $data));
     }
